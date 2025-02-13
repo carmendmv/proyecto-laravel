@@ -5,8 +5,9 @@
     @guest
     <div>
         <form action="">
-            <button class="btn btn-primary btn-sm">Login</button>
-            <button class="btn btn-sm">Register</button>   
+            <a href="login" class="btn btn-primary btn-sm">Login</a>
+            <!--<a href="{{route("login")}}" class="btn btn-primary btn-sm">Login</a> ES LO MISMO--->
+            <a href="register" class="btn btn-sm">Register</a>   
         </form>
     </div>
     @endguest
