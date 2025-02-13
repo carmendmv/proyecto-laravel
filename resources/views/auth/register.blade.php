@@ -1,6 +1,6 @@
 <x-layouts.layout>
-    <div class="flex flex-row justify-center min-h-full bg-gray-200 ">
-        <div class="bg-white p-1 rounded-lg shadow-lg w-1/3 items-center">
+    <div class="flex flex-row justify-center items-center min-h-full bg-gray-200 ">
+        <div class="bg-white p-4 rounded-lg shadow-lg">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
