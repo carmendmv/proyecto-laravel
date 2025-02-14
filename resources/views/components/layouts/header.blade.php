@@ -4,15 +4,21 @@
     <h1 class="text-4xl text-white">GESTIÓN CENTRO</h1>
     @guest
     <div>
-        <form action="">
+        <form action="{{route('login')}}" method="post">
             <a href="login" class="btn btn-primary btn-sm">Login</a>
-            <!--<a href="{{route("login")}}" class="btn btn-primary btn-sm">Login</a> ES LO MISMO--->
+            <!--<a href="{{route("login")}}" class="btn btn-primary btn-sm">Login</a> ES LO MISMO CUANDO SE UTILIZA EL METODO GET--->
             <a href="register" class="btn btn-sm">Register</a>   
         </form>
     </div>
     @endguest
     @auth
-        {{ Auth::user()->name }}
-        <button class="btn btn-sm">Logout</button> 
+    {{auth()->user()->name}}
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+
+        <button type="submit" class="btn btn-sm">
+            {{ __('Log Out') }}
+        </button>
+    </form>
     @endauth
 </header>
