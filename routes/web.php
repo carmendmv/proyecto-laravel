@@ -4,13 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
 
-//rutas protegidas --> Middleware
-
+//ruta protegida --> Middleware
 Route::get("/alumnos", [AlumnoController::class, 'index'])
     ->name('alumnos')
     ->middleware('auth');
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('main');
 })->name('main');
 
@@ -28,3 +27,7 @@ Route::middleware('auth')->group(function () {
 Route::view("about", "about");
 Route::view("noticias", "noticias");
 require __DIR__.'/auth.php';
+
+Route::fallback(function () {
+    return "<h1>Ruta no encontrada</h1>";
+}); 

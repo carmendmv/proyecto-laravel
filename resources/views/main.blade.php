@@ -25,7 +25,7 @@
                     <h2 class="card-title">Alumnos</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Enter</button>
+                        <a href="/alumnos" class="btn btn-primary">Enter</a>
                     </div>
                 </div>
             </div>
