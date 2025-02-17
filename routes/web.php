@@ -2,10 +2,17 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AlumnoController;
 
-Route::get('/', function () {
+//rutas protegidas --> Middleware
+
+Route::get("/alumnos", [AlumnoController::class, 'index'])
+    ->name('alumnos')
+    ->middleware('auth');
+
+Route::get('/home', function () {
     return view('main');
-})->name("main");
+})->name('main');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

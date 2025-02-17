@@ -1,4 +1,5 @@
-<header class="h-15v bg-header flex flex-row justify-between items-center p-3">
+<!--diseño responsive-->
+<header class=" hidden md:flex h-15v bg-header flex flex-row justify-between items-center p-3">
     <img class="max-h-full bg-white" src="{{asset('img/logo.png')}}" alt="logo">
     
     <h1 class="text-4xl text-white">GESTIÓN CENTRO</h1>
@@ -15,7 +16,6 @@
     {{auth()->user()->name}}
     <form method="POST" action="{{ route('logout') }}">
         @csrf
-
         <button type="submit" class="btn btn-sm">
             {{ __('Log Out') }}
         </button>
